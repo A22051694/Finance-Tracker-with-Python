@@ -1,73 +1,91 @@
-# 💰 Finance Tracker with Django (No Database)
 
-A lightweight, user-friendly finance tracking web application built using Django and Python. This tool helps users log income and expenses, categorize transactions, and generate reports — all **without using a database**. Instead, it stores data in simple files like JSON or CSV for ease and portability.
+```md
+# 💰 Finance Tracker with Python
+
+A web-based personal finance tracker built using **Python**, **Django**, and **Vanilla CSS/JS**, with a clean UI, month-wise summaries, and CSV import/export features.
 
 ---
 
 ## 🚀 Features
 
-- 📌 Add, edit, and delete income & expense transactions  
-- 🗂️ Categorize transactions (e.g., Salary, Groceries, Rent)  
-- 📅 Filter transactions by category or date  
-- 📊 View summary reports of income, expenses, and balance  
-- 💾 Store data in local files (JSON or CSV) — no database setup required  
-- 🔄 Export data for backup or offline analysis  
-- ✅ Fully built with free and open-source tools
+- 🔍 Add, edit, and delete income/expense transactions
+- 📅 Month-wise summaries
+- 🗃️ Categorization by income or expense types
+- 📤 Export transactions to CSV
+- 📥 Import transactions from CSV (bulk upload)
+- 💅 Dark theme with smooth, modern styling
+- 🔧 Bug report form for user feedback
 
 ---
 
-## 🛠️ Tech Stack
+## 🖼️ Demo Screenshots
 
-- Python 3.x  
-- Django (latest stable release)  
-- HTML/CSS (via Django templates)  
-- JSON or CSV for data storage  
-- GitHub Codespaces for development
+> _[Screenshots to be added soon]_  
+(Include homepage, tracker page, and month summary when ready.)
 
 ---
 
-## 🔧 Setup Instructions
+## 📂 Project Structure
 
-1. **Clone this repository or open in GitHub Codespaces**  
-   ```bash
-   git clone https://github.com/yourusername/finance-tracker-django.git
-   ```
-
-2. **Install dependencies**  
-   Inside your Codespace or local virtual environment:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Django development server**  
-   ```bash
-   python manage.py runserver
-   ```
-
-4. **Access the app**  
-   Visit `http://localhost:8000/` in your browser.
+```
+finance-tracker/
+│
+├── tracker/              # Django app
+├── templates/            # HTML templates (home, tracker, etc.)
+├── static/               # CSS, JS, animations
+├── manage.py
+└── requirements.txt
+```
 
 ---
 
-## ❓ Why No Database?
+## 🧪 Local Setup
 
-This project is designed to:
-- Be beginner-friendly  
-- Avoid database setup hassles  
-- Use file-based storage (simple and portable)  
-- Fit use-cases like personal budgeting or demo projects
+```bash
+# Clone the repo
+git clone https://github.com/A22051694/Finance-Tracker-with-Python.git
+cd Finance-Tracker-with-Python
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the development server
+python manage.py runserver
+```
 
 ---
 
-## 📦 Future Enhancements
+## 🐳 Docker Setup (Coming Soon)
 
-- Custom budget alerts  
-- Graphs for income vs expense trends  
-- CSV/JSON import functionality  
-- Light/dark mode UI toggle
+> Dockerfile and containerization instructions will be added soon.
 
 ---
 
-## 📝 License
+## ☁️ Azure Deployment (Coming Soon)
 
-This project is open-source under the [MIT License](LICENSE).
+> This section will be updated once the project is deployed on Azure Web App (free tier).
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♀️ Want to Contribute?
+
+Pull requests and suggestions are welcome!  
+Feel free to open an issue or submit a PR for improvements or bug fixes.
+
+---
+
+## 👨‍💻 Author
+
+Made with ❤️ by [@A22051694](https://github.com/A22051694)
+```
+
