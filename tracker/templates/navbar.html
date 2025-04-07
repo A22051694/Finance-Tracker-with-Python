@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">FinanceTracker</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      {% if request.path != '/tracker/' %}
+        <a href="{% url 'tracker' %}">Tracker</a>
+      {% endif %}
+      <a href="#">Report Bug</a>
+    </div>
+  </div>
+</nav>

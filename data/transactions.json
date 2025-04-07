@@ -1,0 +1,14 @@
+[
+    {
+        "date": "2025-04-17",
+        "description": "food",
+        "category": "groceries",
+        "amount": 20.0
+    },
+    {
+        "date": "2025-04-10",
+        "description": "Onion",
+        "category": "groceries",
+        "amount": 240.0
+    }
+]

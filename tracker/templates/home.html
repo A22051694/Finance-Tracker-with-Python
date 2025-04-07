@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AOS & Font Awesome -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <div class="hero" data-aos="zoom-in">
+            <h1>Finance Tracker</h1>
+            <p>Simple and intuitive platform to manage your finances efficiently.</p>
+            <a href="{% url 'tracker' %}" class="btn">Go to Tracker</a>
+        </div>
+
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-wallet"></i>
+                <h3>Expense & Income Tracking</h3>
+                <p>Record your transactions effortlessly and monitor your cash flow.</p>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Summary Overview</h3>
+                <p>Visual breakdown of your finances, categorized for easy insights.</p>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-bug"></i>
+                <h3>Report Issues</h3>
+                <p>Found a bug or need help? Quickly report and help us improve.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Finance Tracker. Built with ❤️</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2 }
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
