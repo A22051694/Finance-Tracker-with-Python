@@ -1,0 +1,13 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.env
+db.sqlite3
+
+# VSCode
+.vscode/
+
+# Docker
+*.tar

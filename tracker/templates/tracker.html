@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tracker - Finance Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  
+</head>
+<body>
+  {% include 'navbar.html' %}
+  
+
+  <div class="tracker-container">
+    <h1>Transaction Tracker</h1>
+
+   
+    
+
+    <div class="form-section">
+      <form method="post" class="form-container">
+        {% csrf_token %}
+
+        <div class="form-field">
+          <label for="{{ form.date.id_for_label }}">📅 Date</label>
+          {{ form.date }}
+        </div>
+
+        <div class="form-field">
+          <label for="{{ form.description.id_for_label }}">📝 Description</label>
+          {{ form.description }}
+        </div>
+
+        <div class="form-field">
+          <label for="{{ form.category.id_for_label }}">📂 Category</label>
+          {{ form.category }}
+        </div>
+
+        <div class="form-field" id="custom-category-field" style="display: none;">
+          <label for="{{ form.custom_category.id_for_label }}">✨ Custom Category</label>
+          {{ form.custom_category }}
+        </div>
+
+        <div class="form-field">
+          <label for="{{ form.amount.id_for_label }}">💰 Amount</label>
+          {{ form.amount }}
+        </div>
+
+        <div class="form-button">
+          <button type="submit">➕ Add Transaction</button>
+        </div>
+      </form>
+    </div>
+    <div class="import-export-container">
+      <div class="export-section">
+        <h3>💾 Export Transactions</h3>
+        <form method="get" action="{% url 'export_csv' %}">
+          <label for="month">Month:</label>
+          <select name="month" id="month">
+            {% for m in months %}
+              <option value="{{ m }}">{{ m }}</option>
+            {% endfor %}
+          </select>
+    
+          <label for="year">Year:</label>
+          <select name="year" id="year">
+            {% for y in years %}
+              <option value="{{ y }}">{{ y }}</option>
+            {% endfor %}
+          </select>
+    
+          <button type="submit">⬇ Export</button>
+        </form>
+      </div>
+    
+      
+    </div>
+    
+    <div class="import-export-container">
+      <div class="import-section">
+        <h3>📥 Import Transactions</h3>
+        <form method="post" action="{% url 'import_csv' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="file" name="csv_file" accept=".csv" required>
+          <button type="submit">⬆ Upload</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="transactions">
+      <h2>All Transactions</h2>
+      {% if transactions %}
+        <ul>
+          {% for t in transactions %}
+          <li>
+            <strong>{{ t.date }}</strong> - {{ t.description }} ({{ t.amount }})
+            <form method="post" action="{% url 'delete_transaction' t.id %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit" class="delete-btn" title="Delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+          </li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p>No transactions recorded yet.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Finance Tracker. Built with ❤️</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categorySelect = document.getElementById("id_category");
+      const customField = document.getElementById("custom-category-field");
+
+      function toggleCustomCategory() {
+        if (categorySelect && categorySelect.value === "custom") {
+          customField.style.display = "flex";
+        } else {
+          customField.style.display = "none";
+        }
+      }
+
+      if (categorySelect) {
+        toggleCustomCategory();
+        categorySelect.addEventListener("change", toggleCustomCategory);
+      }
+    });
+  </script>
+</body>
+</html>
