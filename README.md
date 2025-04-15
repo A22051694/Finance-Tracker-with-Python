@@ -1,5 +1,4 @@
 
-```md
 # 💰 Finance Tracker with Python
 
 A web-based personal finance tracker built using **Python**, **Django**, and **Vanilla CSS/JS**, with a clean UI, month-wise summaries, and CSV import/export features.
@@ -31,10 +30,29 @@ A web-based personal finance tracker built using **Python**, **Django**, and **V
 finance-tracker/
 │
 ├── tracker/              # Django app
+│   ├── migrations/       # Database migrations
+│   ├── __init__.py
+│   ├── admin.py          # Django admin configuration
+│   ├── apps.py           # Django app configuration
+│   ├── models.py         # Database models
+│   ├── tests.py          # Unit tests
+│   └── views.py          # View logic
+│
 ├── templates/            # HTML templates (home, tracker, etc.)
+│   ├── base.html         # Base layout
+│   ├── home.html         # Home page template
+│   └── tracker.html      # Tracker page template
+│
 ├── static/               # CSS, JS, animations
-├── manage.py
-└── requirements.txt
+│   ├── css/              # Stylesheets
+│   │   ├── base.css      # Global styles
+│   │   └── tracker.css   # Tracker page styles
+│   └── js/               # JavaScript files
+│       └── app.js        # JS functionality
+│
+├── manage.py             # Django management script
+├── requirements.txt      # Project dependencies
+└── .gitignore            # Git ignore rules
 ```
 
 ---
@@ -48,7 +66,7 @@ cd Finance-Tracker-with-Python
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  # or venv\Scripts ctivate on Windows
 
 # Install dependencies
 pip install -r requirements.txt
@@ -62,12 +80,14 @@ python manage.py runserver
 ## 🐳 Docker Setup (Coming Soon)
 
 > Dockerfile and containerization instructions will be added soon.
+> Docker Image: `xoxoi/finance-tracker:latest`
 
 ---
 
-## ☁️ Azure Deployment (Coming Soon)
+## ☁️ Azure Deployment
 
 > This section will be updated once the project is deployed on Azure Web App (free tier).
+> Azure URL: `finance-trackers.azurewebsites.net`
 
 ---
 
@@ -87,5 +107,3 @@ Feel free to open an issue or submit a PR for improvements or bug fixes.
 ## 👨‍💻 Author
 
 Made with ❤️ by [@A22051694](https://github.com/A22051694)
-```
-
